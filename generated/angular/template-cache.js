@@ -1,10 +1,11 @@
 angular.module("app").run(["$templateCache", function($templateCache) {
 
   $templateCache.put("anon/home.html",
-    "<div class=\"container\">\n" +
-    "  <div class=\"\" id=\"googleMap\">\n" +
+    "<div class=\"container\" ng-controller=\"homeMap\">\n" +
     "\n" +
-    "  </div>\n" +
+    "    <div map-lazy-load=\"https://maps.google.com/maps/api/js\" map-lazy-load-params=\"{{ googleMapsUrl }}\">\n" +
+    "        <ng-map center=\"48,2\" zoom=\"2\"  class=\"map\"></ng-map>\n" +
+    "    </div>\n" +
     "\n" +
     "</div>\n"
   );

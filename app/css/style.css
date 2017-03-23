@@ -1,3 +1,9 @@
+/*navbar padding and search*/
+
 .navbarSearch {
   padding-top: 14px;
+}
+
+.map {
+  height: 725px;
 }
