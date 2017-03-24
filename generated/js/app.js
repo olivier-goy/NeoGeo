@@ -61270,23 +61270,17 @@ angular.module('app')
 
 angular.module('app')
     .controller('homeMap', function($scope) {
-      $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv5auTo8Sbai_cAn0L8vS1yTJi6WCIoDU";
+        $scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCv5auTo8Sbai_cAn0L8vS1yTJi6WCIoDU";
     });
-
-
-    // angular.module('app')
-    //     .controller('homeMap', function($scope, $http) {
-    //       $http.get('https://webcamstravel.p.mashape.com/webcams/list/country=' + country + 'X-Mashape-Key' + 'eZY75umHXumshR2VkxxmAMf8mDqIp1BscWhjsnuQfAAguHJVdi');
-    //     });
 
 angular.module('app')
     .controller('LoginController', function($scope, $http) {
 
 
         $scope.country = "";
-        
+
         $scope.search = function() {
-            $http.get('https://webcamstravel.p.mashape.com/webcams/list/country=' + $scope.country +'?show=webcams:location,image,url', {
+            $http.get('https://webcamstravel.p.mashape.com/webcams/list/limit=10/country=' + $scope.country +'?show=webcams:location,image,url', {
                 headers: {
                     'X-Mashape-Key': 'eZY75umHXumshR2VkxxmAMf8mDqIp1BscWhjsnuQfAAguHJVdi'
                 }
@@ -61424,8 +61418,218 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "<div class=\"container\" ng-controller=\"homeMap\">\n" +
     "\n" +
     "    <div map-lazy-load=\"https://maps.google.com/maps/api/js\" map-lazy-load-params=\"{{ googleMapsUrl }}\">\n" +
-    "        <ng-map center=\"48,2\" zoom=\"2\"  class=\"map\"></ng-map>\n" +
+    "        <ng-map center=\"48,2\" zoom=\"2\" class=\"map\">\n" +
+    "            <custom-marker id=\"foo\" position=\"france\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "              <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\"><img width=\"70\" src=\"http://www.toutesleswebcams.com/images/webcam-metz-cathedrale.jpg\" align=\"left\" /></button>\n" +
+    "\n" +
+    "            </custom-marker>\n" +
+    "\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1178148742\" data-play=\"day\" href=\"//lookr.com/1178148742\" target=\"_blank\">Navarredonda de Gredos: Bar el Cruce</a>\n" +
+    "                    <script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <custom-marker id=\"foo\" position=\"russie\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal1\"><img width=\"70\" src=\"http://www.playawebcams.com/andy/webcam-novosibirsk.jpg\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1428614761\" data-play=\"day\" href=\"//lookr.com/1428614761\" target=\"_blank\">Moscow: HD</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "            <custom-marker id=\"foo\" position=\"usa\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal2\"><img width=\"70\" src=\"https://images.webcamgalore.com/webcamimages/webcam-001164.jpg\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal2\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                  <a name=\"lkr-timelapse-player\" data-id=\"1341941407\" data-play=\"day\" href=\"//lookr.com/1341941407\" target=\"_blank\">Iowa City: The University of − Campus live webcam − City</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "            <custom-marker id=\"foo\" position=\"australie\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal3\"><img width=\"70\" src=\"http://www.mylivestreams.com/images/camera/large_10706.jpg\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal3\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1237889733\" data-play=\"day\" href=\"//lookr.com/1237889733\" target=\"_blank\">Sydney</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "            <custom-marker id=\"foo\" position=\"angola\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal4\"><img width=\"70\" src=\"https://images.webcams.travel/webcam/1378309110-Weather-Skyna-Hotel-Luanda-Angola-Maianga.jpg?token=gv-Te9wpQRe\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal4\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1181821601\" data-play=\"day\" href=\"//lookr.com/1181821601\" target=\"_blank\">Windhoek</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "            <custom-marker id=\"foo\" position=\"bresil\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal5\"><img width=\"70\" src=\"https://www.monde-du-voyage.com/bresil/webcams-bresil.jpg\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal5\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1324489923\" data-play=\"day\" href=\"//lookr.com/1324489923\" target=\"_blank\">Copacabana: Beach</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "            <custom-marker id=\"foo\" position=\"chine\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal6\"><img width=\"70\" src=\"http://www.mylivestreams.com/images/camera/large_11828.jpg\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal6\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1179240123\" data-play=\"day\" href=\"//lookr.com/1179240123\" target=\"_blank\">Hong Kong: Downtown live webcam in China</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "            <custom-marker id=\"foo\" position=\"kazakhstan\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal7\"><img width=\"70\" src=\"http://www.worldincams.com/img/webcams/kazakhstan/kazakhstan-almaty-ploshad-respubliki-almaty-daylight.jpg\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal7\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1481519833\" data-play=\"day\" href=\"//lookr.com/1481519833\" target=\"_blank\">Zaimka Bulygina › North-East: Central square, Semip: View from Irtysh hotel to Central square</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "            <custom-marker id=\"foo\" position=\"canada\" on-click=\"vm.closeCustomMarker()\">\n" +
+    "\n" +
+    "                <button type=\"button\" class=\"btn btn-link btn-lg\" data-toggle=\"modal\" data-target=\"#myModal8\"><img width=\"70\" src=\"http://canadianrockies.org/banffwebcam/wp-content/uploads/tdomf/336/GetLiveImage.jpg\" align=\"left\" /></button>\n" +
+    "            </custom-marker>\n" +
+    "            <!-- Modal -->\n" +
+    "            <div class=\"modal fade\" id=\"myModal8\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\n" +
+    "              <div class=\"modal-dialog\" role=\"document\">\n" +
+    "                <div class=\"modal-content\">\n" +
+    "                  <div class=\"modal-header\">\n" +
+    "                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-body\">\n" +
+    "                    <a name=\"lkr-timelapse-player\" data-id=\"1349193322\" data-play=\"day\" href=\"//lookr.com/1349193322\" target=\"_blank\">Fort McMurray: Airport − Southeast View</a><script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                  </div>\n" +
+    "                  <div class=\"modal-footer\">\n" +
+    "                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
+    "\n" +
+    "                  </div>\n" +
+    "                </div>\n" +
+    "              </div>\n" +
+    "            </div>\n" +
+    "\n" +
+    "        </ng-map>\n" +
+    "        <!-- <ng-map center=\"-25.363882,131.044922\" zoom=\"4\"> -->\n" +
+    "\n" +
+    "        <!-- </ng-map> -->\n" +
     "    </div>\n" +
+    "\n" +
+    "\n" +
+    "\n" +
     "\n" +
     "</div>\n"
   );
@@ -61443,7 +61647,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "                <div class=\"input-group\">\n" +
     "                    <input type=\"text\" class=\"form-control\" placeholder=\"Search for...\" ng-model=\"country\">\n" +
     "                    <span class=\"input-group-btn\">\n" +
-    "                      <button class=\"btn btn-primary\" type=\"button\"  ng-click=\"search()\">Go !</button>\n" +
+    "                      <button class=\"btn btn-primary\" type=\"button\" ng-click=\"search()\">Go !</button>\n" +
     "                    </span>\n" +
     "                </div>\n" +
     "\n" +
@@ -61466,6 +61670,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "                        <!-- <div ng-if=\"screen[1].id !== undefined\"> -->\n" +
     "                        <a name=\"lkr-timelapse-player\" data-id=\"{{ screen.id }}\" data-play=\"day\" href=\"//lookr.com/{{ screen.id }}\" target=\"_blank\">Navarredonda de Gredos: Bar el Cruce</a>\n" +
     "                        <script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "\n" +
     "                        <!-- </div> -->\n" +
     "                    </div>\n" +
     "\n" +
@@ -61494,7 +61699,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "                <a ui-sref=\"anon.home\"><img alt=\"Brand\" src=\"img/neogeo.png\"></a>\n" +
     "\n" +
     "            </li>\n" +
-    "            \n" +
+    "\n" +
     "        </ul>\n" +
     "\n" +
     "\n" +

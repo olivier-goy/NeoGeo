@@ -2,11 +2,14 @@
 <html ng-app="app">
 
 <head>
+
     <title>
         <%= pkg.name %>
     </title>
     <!-- <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css"> -->
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
 
 
@@ -37,7 +40,10 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv5auTo8Sbai_cAn0L8vS1yTJi6WCIoDU&callback=initMap"
     async defer></script> -->
+
     <script type="text/javascript" src="<%= js %>"></script>
+
+
 
 
 
