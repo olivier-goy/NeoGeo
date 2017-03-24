@@ -1,11 +1,145 @@
 angular.module("app").run(["$templateCache", function($templateCache) {
 
   $templateCache.put("anon/home.html",
-    "<div class=\"container\" ng-controller=\"homeMap\">\n" +
+    "<div class=\"container home-map\" ng-controller=\"homeMap\">\n" +
+    "\n" +
+    "    <!--carousel-->\n" +
+    "\n" +
+    "    <div class=\"left-box\">\n" +
+    "\n" +
+    "        <section class=\"cam1\">\n" +
+    "            <!--Caroussel, Map, Formulaire-->\n" +
+    "            <div id=\"myCarousel\" data-ride=\"carousel\">\n" +
+    "                <!-- Indicators -->\n" +
+    "                <ol class=\"carousel-indicators\">\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>\n" +
+    "                </ol>\n" +
+    "\n" +
+    "                <!-- Wrapper for slides -->\n" +
+    "                <div class=\"carousel-inner\" role=\"listbox\">\n" +
+    "                    <div class=\"item active\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/abstract/\" alt=\"cam1\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/people/\" alt=\"cam1\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/nightlife/\" alt=\"cam1\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/\" alt=\"cam1\">\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </section>\n" +
+    "\n" +
+    "        <section class=\"cam2\">\n" +
+    "            <!--Caroussel, Map, Formulaire-->\n" +
+    "            <div id=\"myCarousel\" data-ride=\"carousel\">\n" +
+    "                <!-- Indicators -->\n" +
+    "                <ol class=\"carousel-indicators\">\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>\n" +
+    "                </ol>\n" +
+    "\n" +
+    "                <!-- Wrapper for slides -->\n" +
+    "                <div class=\"carousel-inner\" role=\"listbox\">\n" +
+    "                    <div class=\"item active\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/animals/\" alt=\"cam2\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/food/\" alt=\"cam2\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/nature/\" alt=\"cam2\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/city/\" alt=\"cam2\">\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </section>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <!--carousel fin-->\n" +
+    "\n" +
+    "    <!-- map début -->\n" +
     "\n" +
     "    <div map-lazy-load=\"https://maps.google.com/maps/api/js\" map-lazy-load-params=\"{{ googleMapsUrl }}\">\n" +
-    "        <ng-map center=\"48,2\" zoom=\"2\"  class=\"map\"></ng-map>\n" +
+    "        <ng-map center=\"28,3\" zoom=\"2\" class=\"map\"></ng-map>\n" +
     "    </div>\n" +
+    "\n" +
+    "    <!-- map fin -->\n" +
+    "\n" +
+    "    <!--carousel-->\n" +
+    "\n" +
+    "    <div class=\"right-box\">\n" +
+    "\n" +
+    "        <section class=\"cam3\">\n" +
+    "            <!--Caroussel, Map, Formulaire-->\n" +
+    "            <div id=\"myCarousel\" data-ride=\"carousel\">\n" +
+    "                <!-- Indicators -->\n" +
+    "                <ol class=\"carousel-indicators\">\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>\n" +
+    "                </ol>\n" +
+    "\n" +
+    "                <!-- Wrapper for slides -->\n" +
+    "                <div class=\"carousel-inner\" role=\"listbox\">\n" +
+    "                    <div class=\"item active\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/business/\" alt=\"cam3\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/cats/\" alt=\"cam3\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/fashion/\" alt=\"cam3\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/technics/\" alt=\"cam3\">\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </section>\n" +
+    "\n" +
+    "        <section class=\"cam4\">\n" +
+    "            <!--Caroussel, Map, Formulaire-->\n" +
+    "            <div id=\"myCarousel\" data-ride=\"carousel\">\n" +
+    "                <!-- Indicators -->\n" +
+    "                <ol class=\"carousel-indicators\">\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n" +
+    "                    <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>\n" +
+    "                </ol>\n" +
+    "\n" +
+    "                <!-- Wrapper for slides -->\n" +
+    "                <div class=\"carousel-inner\" role=\"listbox\">\n" +
+    "                    <div class=\"item active\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/transport/\" alt=\"cam4\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/abstract/\" alt=\"cam4\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/business/\" alt=\"cam4\">\n" +
+    "                    </div>\n" +
+    "                    <div class=\"item\">\n" +
+    "                        <img src=\"http://lorempixel.com/130/130/animals/\" alt=\"cam4\">\n" +
+    "                    </div>\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </section>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <!--carousel fin-->\n" +
     "\n" +
     "</div>\n"
   );
@@ -30,7 +164,7 @@ angular.module("app").run(["$templateCache", function($templateCache) {
   );
 
   $templateCache.put("anon/navbar.html",
-    "<nav class=\"navbar navbar-inverse navbar-static-top\" role=\"navigation\" ng-controller=\"NavbarController\">\n" +
+    "<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\" ng-controller=\"NavbarController\">\n" +
     "    <div class=\"container-fluid\">\n" +
     "        <div class=\"navbar-header\">\n" +
     "            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar\">\n" +

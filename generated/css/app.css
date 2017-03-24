@@ -7342,14 +7342,42 @@ button.close {
   }
 }
 
-/*navbar padding and search*/
-
+body{
+    background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+    padding:50px;
+}
+.home-map {
+    margin-top: 3.5em;
+}
 .navbarSearch {
-  padding-top: 14px;
+    padding-top: 1em;
 }
 
 .map {
-  height: 725px;
+    height: 34.5em;
+    width: 60em;
+    margin-left: 10.5em;
+}
+
+.cam1 {
+    float: left;
+    margin-top: 2em;
+    margin-left: -2.5em;
+}
+.cam2 {
+    float: left;
+    margin-top: 20em;
+    margin-left: -9.25em;
+}
+.cam3 {
+    float: right;
+    margin-top: -32.5em;
+    margin-right: -2.25em;
+}
+.cam4 {
+    float: right;
+    margin-top: -14em;
+    margin-right: -2.25em;
 }
 
 
