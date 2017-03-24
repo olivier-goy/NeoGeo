@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation" ng-controller="NavbarController">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavbarController">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -13,7 +13,6 @@
         <ul class="nav navbar-nav">
             <li ui-sref-active="active">
                 <a ui-sref="anon.home"><img alt="Brand" src="img/neogeo.png"></a>
-
             </li>
 
         </ul>
@@ -23,17 +22,29 @@
             <button class="btn btn-primary " ui-sref="anon.login">Search !</button>
         </div>
 
+
     </div>
 </nav>
 
+<!--Footer-->
 
 
 <footer>
 
-    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+            crossorigin="anonymous">
+        <!-- // -->
         <div class="container">
-            <p class="navbar-text pull-left">NeoGeo © 2017 | WCS Product | Dream by Olivier & Jehan</p>
+            <a id="fin"> NeoGeo | WCS  La loupee Product | Dream by Olivier & Jehan | Ⓒ 2017<br></a>
+            <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+            <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+            <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+            <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
         </div>
-    </div>
+        <hr>
+        </div>
 
 </footer>
+
+<!--Footer fin-->
