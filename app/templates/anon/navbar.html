@@ -10,28 +10,30 @@
             <a class="navbar-brand" href="#"></a>
         </div>
 
-            <ul class="nav navbar-nav">
-                <li ui-sref-active="active"><a ui-sref="anon.home"><img alt="Brand" src="img/neogeo.png"></a></li>
+        <ul class="nav navbar-nav">
+            <li ui-sref-active="active">
+                <a ui-sref="anon.home"><img alt="Brand" src="img/neogeo.png"></a>
 
-            </ul>
+            </li>
+            
+        </ul>
 
-            <form class="navbar-form navbar-right navbarSearch" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-primary">Go !</button>
-            </form>
+
+        <div class="nav navbar-right  navbarSearch">
+            <button class="btn btn-primary " ui-sref="anon.login">Search !</button>
+        </div>
 
     </div>
 </nav>
 
 
+
 <footer>
 
-  <div class="navbar navbar-inverse navbar-fixed-bottom">
-      <div class="container">
-          <p class="navbar-text pull-left">NeoGeo © 2017 | WCS Product | Dream by Olivier & Jehan</p>
-      </div>
-  </div>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">NeoGeo © 2017 | WCS Product | Dream by Olivier & Jehan</p>
+        </div>
+    </div>
 
 </footer>

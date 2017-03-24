@@ -1,15 +1,22 @@
 angular.module('app')
-    .controller('LoginController', function($scope, $state, Auth) {
-        $scope.errors = [];
+    .controller('LoginController', function($scope, $http) {
 
-        $scope.login = function() {
-            if ($scope.loginForm.$valid) {
-                $scope.errors = [];
-                Auth.login($scope.user).then(function(result) {
-                    $state.go('user.profile');
-                }).catch(function(err) {
-                    $scope.errors.push(err);
-                });
-            }
+
+        $scope.country = "";
+        
+        $scope.search = function() {
+            $http.get('https://webcamstravel.p.mashape.com/webcams/list/country=' + $scope.country +'?show=webcams:location,image,url', {
+                headers: {
+                    'X-Mashape-Key': 'eZY75umHXumshR2VkxxmAMf8mDqIp1BscWhjsnuQfAAguHJVdi'
+                }
+            }).then(function(res) {
+                $scope.tot = res.data;
+                $scope.screens = res.data.result.webcams;
+
+
+                console.log(res.data);
+            });
+
         };
+
     });

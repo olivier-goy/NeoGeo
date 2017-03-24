@@ -61273,20 +61273,33 @@ angular.module('app')
       $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv5auTo8Sbai_cAn0L8vS1yTJi6WCIoDU";
     });
 
-angular.module('app')
-    .controller('LoginController', function($scope, $state, Auth) {
-        $scope.errors = [];
 
-        $scope.login = function() {
-            if ($scope.loginForm.$valid) {
-                $scope.errors = [];
-                Auth.login($scope.user).then(function(result) {
-                    $state.go('user.profile');
-                }).catch(function(err) {
-                    $scope.errors.push(err);
-                });
-            }
+    // angular.module('app')
+    //     .controller('homeMap', function($scope, $http) {
+    //       $http.get('https://webcamstravel.p.mashape.com/webcams/list/country=' + country + 'X-Mashape-Key' + 'eZY75umHXumshR2VkxxmAMf8mDqIp1BscWhjsnuQfAAguHJVdi');
+    //     });
+
+angular.module('app')
+    .controller('LoginController', function($scope, $http) {
+
+
+        $scope.country = "";
+        
+        $scope.search = function() {
+            $http.get('https://webcamstravel.p.mashape.com/webcams/list/country=' + $scope.country +'?show=webcams:location,image,url', {
+                headers: {
+                    'X-Mashape-Key': 'eZY75umHXumshR2VkxxmAMf8mDqIp1BscWhjsnuQfAAguHJVdi'
+                }
+            }).then(function(res) {
+                $scope.tot = res.data;
+                $scope.screens = res.data.result.webcams;
+
+
+                console.log(res.data);
+            });
+
         };
+
     });
 
 angular.module('app')
@@ -61418,20 +61431,47 @@ angular.module("app").run(["$templateCache", function($templateCache) {
   );
 
   $templateCache.put("anon/login.html",
-    "<div class=\"row\">\n" +
-    "    <div class=\"col-xs-6 col-xs-offset-3\">\n" +
-    "        <form class=\"form\" name=\"loginForm\" novalidate ng-submit=\"login()\">\n" +
-    "            <div ng-repeat=\"error in errors\">{{error.error}}</div>\n" +
-    "            <div class=\"input-group\">\n" +
-    "                <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-user\"></i></span>\n" +
-    "                <input id=\"email\" type=\"email\" class=\"form-control\" ng-model=\"user.email\" required placeholder=\"Email Address\">\n" +
+    "<div class=\"container\">\n" +
+    "\n" +
+    "\n" +
+    "\n" +
+    "    <div class=\"row\" ng-controller=\"LoginController\">\n" +
+    "        <div class=\"row\">\n" +
+    "\n" +
+    "\n" +
+    "            <div class=\"col-lg-offset-3 col-lg-6\">\n" +
+    "                <div class=\"input-group\">\n" +
+    "                    <input type=\"text\" class=\"form-control\" placeholder=\"Search for...\" ng-model=\"country\">\n" +
+    "                    <span class=\"input-group-btn\">\n" +
+    "                      <button class=\"btn btn-primary\" type=\"button\"  ng-click=\"search()\">Go !</button>\n" +
+    "                    </span>\n" +
+    "                </div>\n" +
+    "\n" +
     "            </div>\n" +
-    "            <div class=\"input-group\">\n" +
-    "                <span class=\"input-group-addon\"><i class=\"glyphicon glyphicon-lock\"></i></span>\n" +
-    "                <input id=\"password\" type=\"password\" class=\"form-control\" ng-model=\"user.password\" required placeholder=\"Password\">\n" +
+    "\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <br/>\n" +
+    "        <div class=\"row\">\n" +
+    "\n" +
+    "            <div class=\"col-lg-offset-1 col-lg-10\">\n" +
+    "\n" +
+    "\n" +
+    "                <div >\n" +
+    "\n" +
+    "\n" +
+    "                    <!-- <p>{{ screen[1].id }}</p> -->\n" +
+    "                    <div ng-repeat=\"screen in screens\" class=\"screen col-xs-6\">\n" +
+    "\n" +
+    "                        <!-- <div ng-if=\"screen[1].id !== undefined\"> -->\n" +
+    "                        <a name=\"lkr-timelapse-player\" data-id=\"{{ screen.id }}\" data-play=\"day\" href=\"//lookr.com/{{ screen.id }}\" target=\"_blank\">Navarredonda de Gredos: Bar el Cruce</a>\n" +
+    "                        <script async type=\"text/javascript\" src=\"//api.lookr.com/embed/script/timelapse.js\"></script>\n" +
+    "                        <!-- </div> -->\n" +
+    "                    </div>\n" +
+    "\n" +
+    "                </div>\n" +
     "            </div>\n" +
-    "            <button type=\"submit\" class=\"btn btn-primary btn-block\">Login</button>\n" +
-    "        </form>\n" +
+    "        </div>\n" +
     "    </div>\n" +
     "</div>\n"
   );
@@ -61449,29 +61489,31 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "            <a class=\"navbar-brand\" href=\"#\"></a>\n" +
     "        </div>\n" +
     "\n" +
-    "            <ul class=\"nav navbar-nav\">\n" +
-    "                <li ui-sref-active=\"active\"><a ui-sref=\"anon.home\"><img alt=\"Brand\" src=\"img/neogeo.png\"></a></li>\n" +
+    "        <ul class=\"nav navbar-nav\">\n" +
+    "            <li ui-sref-active=\"active\">\n" +
+    "                <a ui-sref=\"anon.home\"><img alt=\"Brand\" src=\"img/neogeo.png\"></a>\n" +
     "\n" +
-    "            </ul>\n" +
+    "            </li>\n" +
+    "            \n" +
+    "        </ul>\n" +
     "\n" +
-    "            <form class=\"navbar-form navbar-right navbarSearch\" role=\"search\">\n" +
-    "                <div class=\"form-group\">\n" +
-    "                    <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n" +
-    "                </div>\n" +
-    "                <button type=\"submit\" class=\"btn btn-primary\">Go !</button>\n" +
-    "            </form>\n" +
+    "\n" +
+    "        <div class=\"nav navbar-right  navbarSearch\">\n" +
+    "            <button class=\"btn btn-primary \" ui-sref=\"anon.login\">Search !</button>\n" +
+    "        </div>\n" +
     "\n" +
     "    </div>\n" +
     "</nav>\n" +
     "\n" +
     "\n" +
+    "\n" +
     "<footer>\n" +
     "\n" +
-    "  <div class=\"navbar navbar-inverse navbar-fixed-bottom\">\n" +
-    "      <div class=\"container\">\n" +
-    "          <p class=\"navbar-text pull-left\">NeoGeo © 2017 | WCS Product | Dream by Olivier & Jehan</p>\n" +
-    "      </div>\n" +
-    "  </div>\n" +
+    "    <div class=\"navbar navbar-inverse navbar-fixed-bottom\">\n" +
+    "        <div class=\"container\">\n" +
+    "            <p class=\"navbar-text pull-left\">NeoGeo © 2017 | WCS Product | Dream by Olivier & Jehan</p>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
     "\n" +
     "</footer>\n"
   );
