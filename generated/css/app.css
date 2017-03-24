@@ -7342,9 +7342,15 @@ button.close {
   }
 }
 
+@font-face {
+    font-family: 'Raleway-Regular';
+    src: url('/fonts/Raleway-Regular.ttf');
+}
+
 body {
     background: url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
     padding: 50px;
+    font-family: 'Raleway-Regular', sans-serif;
 }
 
 .home-map {
@@ -7365,27 +7371,32 @@ body {
     float: left;
     margin-top: 2em;
     margin-left: -2.5em;
+    border: 2px solid #333;
 }
 
 .cam2 {
     float: left;
     margin-top: 20em;
     margin-left: -9.25em;
+    border: 2px solid #333;
 }
 
 .cam3 {
     float: right;
     margin-top: -32.5em;
     margin-right: -2.25em;
+    border: 2px solid #333;
 }
 
 .cam4 {
     float: right;
     margin-top: -14em;
     margin-right: -2.25em;
+    border: 2px solid #333;
 }
 
 footer {
+    font-family: 'Raleway-Regular', sans-serif;
     position: fixed;
     bottom: 0;
     text-align: center;
