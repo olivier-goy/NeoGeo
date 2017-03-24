@@ -176,31 +176,42 @@ angular.module("app").run(["$templateCache", function($templateCache) {
     "            <a class=\"navbar-brand\" href=\"#\"></a>\n" +
     "        </div>\n" +
     "\n" +
-    "            <ul class=\"nav navbar-nav\">\n" +
-    "                <li ui-sref-active=\"active\"><a ui-sref=\"anon.home\"><img alt=\"Brand\" src=\"img/neogeo.png\"></a></li>\n" +
+    "        <ul class=\"nav navbar-nav\">\n" +
+    "            <li ui-sref-active=\"active\">\n" +
+    "                <a ui-sref=\"anon.home\"><img alt=\"Brand\" src=\"img/neogeo.png\"></a>\n" +
+    "            </li>\n" +
     "\n" +
-    "            </ul>\n" +
+    "        </ul>\n" +
     "\n" +
-    "            <form class=\"navbar-form navbar-right navbarSearch\" role=\"search\">\n" +
-    "                <div class=\"form-group\">\n" +
-    "                    <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n" +
-    "                </div>\n" +
-    "                <button type=\"submit\" class=\"btn btn-primary\">Go !</button>\n" +
-    "            </form>\n" +
+    "        <form class=\"navbar-form navbar-right navbarSearch\" role=\"search\">\n" +
+    "            <div class=\"form-group\">\n" +
+    "                <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n" +
+    "            </div>\n" +
+    "            <button type=\"submit\" class=\"btn btn-primary\">Go !</button>\n" +
+    "        </form>\n" +
     "\n" +
     "    </div>\n" +
     "</nav>\n" +
     "\n" +
+    "<!--Footer-->\n" +
     "\n" +
     "<footer>\n" +
+    "    <link href=\"//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">\n" +
+    "    <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==\"\n" +
+    "        crossorigin=\"anonymous\">\n" +
+    "    <!-- // -->\n" +
+    "    <div class=\"container\">\n" +
+    "        <a id=\"fin\"> NeoGeo | WCS  La loupee Product | Dream by Olivier & Jehan | Ⓒ 2017<br></a>\n" +
+    "        <a href=\"https://www.facebook.com/bootsnipp\"><i id=\"social-fb\" class=\"fa fa-facebook-square fa-3x social\"></i></a>\n" +
+    "        <a href=\"https://twitter.com/bootsnipp\"><i id=\"social-tw\" class=\"fa fa-twitter-square fa-3x social\"></i></a>\n" +
+    "        <a href=\"https://plus.google.com/+Bootsnipp-page\"><i id=\"social-gp\" class=\"fa fa-google-plus-square fa-3x social\"></i></a>\n" +
+    "        <a href=\"mailto:bootsnipp@gmail.com\"><i id=\"social-em\" class=\"fa fa-envelope-square fa-3x social\"></i></a>\n" +
+    "    </div>\n" +
+    "    <hr>\n" +
+    "    </div>\n" +
+    "</footer>\n" +
     "\n" +
-    "  <div class=\"navbar navbar-inverse navbar-fixed-bottom\">\n" +
-    "      <div class=\"container\">\n" +
-    "          <p class=\"navbar-text pull-left\">NeoGeo © 2017 | WCS Product | Dream by Olivier & Jehan</p>\n" +
-    "      </div>\n" +
-    "  </div>\n" +
-    "\n" +
-    "</footer>\n"
+    "<!--Footer fin-->\n"
   );
 
   $templateCache.put("anon/register.html",
